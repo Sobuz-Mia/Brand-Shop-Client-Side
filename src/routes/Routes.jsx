@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Home from "../pages/Home";
 import ErrorPage from "../pages/ErrorPage";
+import AddProducts from "../components/AddProducts/AddProducts";
 
 
 
@@ -24,6 +25,10 @@ const CreateRoute = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register/>
+            },
+            {
+                path:'/addProducts',
+                element:<AddProducts/>
             }
         ]
        

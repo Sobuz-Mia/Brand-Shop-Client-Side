@@ -1,0 +1,35 @@
+{
+    "brands": [
+      {
+        "id": 1,
+        "name": "Apple",
+        "img": "https://i.ibb.co/Yc2ysg3/apple.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Samsung",
+        "img": "https://i.ibb.co/6v0GLHP/samsung.png"
+      },
+      {
+        "id": 3,
+        "name": "Sony",
+        "img": "https://i.ibb.co/qdRGYB6/sony.png"
+      },
+      {
+        "id": 4,
+        "name": "Google",
+        "img": "https://i.ibb.co/XxwNVG9/google.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Intel",
+        "img": "https://i.ibb.co/zxyDJJ7/intel.png"
+      },
+      {
+        "id": 6,
+        "name": "HP",
+        "img": "https://i.ibb.co/DRvbb5F/images.png"
+      }
+    ]
+  }
+  
