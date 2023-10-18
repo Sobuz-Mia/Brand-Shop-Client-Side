@@ -51,7 +51,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex md:flex-row flex-col items-center gap-3">
           <img className="w-10 h-10 rounded-full" src={logo} alt="" />
           <p className="text-3xl flex flex-col font-semibold">
             Smart Shop{" "}
