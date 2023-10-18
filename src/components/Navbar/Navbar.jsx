@@ -63,7 +63,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal text-lg px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        {user && <p>{user.displayName}</p>}
+        {user && <p className="mr-2">{user.displayName}</p>}
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
           <div className=" rounded-full">
             <img src={user ? user?.photoURL : userLogo} />
