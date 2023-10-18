@@ -1,11 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import { RouterProvider } from 'react-router-dom';
-import CreateRoute from './routes/Routes.jsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { RouterProvider } from "react-router-dom";
+import CreateRoute from "./routes/Routes.jsx";
+import AuthProvider from "./provider/AuthProvider";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-  <RouterProvider router={CreateRoute}></RouterProvider>
-  </React.StrictMode>,
-)
+    <AuthProvider>
+      <RouterProvider router={CreateRoute}></RouterProvider>
+    </AuthProvider>
+  </React.StrictMode>
+);

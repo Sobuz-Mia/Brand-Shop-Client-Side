@@ -1,7 +1,18 @@
 import { NavLink } from "react-router-dom";
 import logo from '../../assets/logo.jpg'
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import userLogo  from '../../assets/userLogo.png'
 
 const Navbar = () => {
+
+  const {user,loggedOut} = useContext(AuthContext);
+  console.log(user);
+
+    const handleSignout = () =>{
+      loggedOut()
+      .then()
+    }
     const navLinks = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/products'}>Add Product</NavLink></li>
@@ -22,11 +33,7 @@ const Navbar = () => {
             <img className="w-10 h-10 rounded-full" src={logo} alt="" />
             <p className="text-3xl flex flex-col font-semibold">Smart Shop <span className="text-sm font-normal">Easy Solution</span></p>
           </div>
-          {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img className="w-24 h-24" src={logo} />
-        </div>
-      </label> */}
+         
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal text-lg px-1">
@@ -34,7 +41,16 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
+        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <div className=" rounded-full">
+            <img src={user?user?.photoURL:userLogo} />
+          </div>
+        </label>
+          {user?
+          <NavLink to={'/login'}><button onClick={handleSignout} className="btn btn-ghost normal-case text-xl">Logout</button></NavLink> :
           <NavLink to={'/login'}><button className="btn btn-ghost normal-case text-xl">Login</button></NavLink>
+          }
+          
         </div>
       </div>
     );
