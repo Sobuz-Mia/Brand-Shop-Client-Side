@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const AddProducts = () => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -19,7 +20,27 @@ const AddProducts = () => {
     const photo = form.photo.value;
     const product = {name,brandName,price,rating,description,selectedOption,photo}
     console.log(product)
-    console.log(name,brandName,price,rating,description,selectedOption,photo);
+    fetch('http://localhost:5000/data',{
+        method:'POST',
+        headers:{
+            "content-type" : "application/json"
+        },
+        body:JSON.stringify(product)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        if(data.insertedId){
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'New Product added successfully',
+                showConfirmButton: false,
+                timer: 1500
+              })
+        }
+        console.log(data)
+    })
+    .catch()
   }
 
  
@@ -78,8 +99,8 @@ const AddProducts = () => {
           <div className="form-control w-full max-w-xs">
             <select
               className="select select-bordered"
-              onChange={handleSelectChange} // Add the onChange event handler
-              value={selectedOption} // Set the value attribute to the selected option state
+              onChange={handleSelectChange} 
+              value={selectedOption} 
             >
               <option disabled value="">
                 Select category
