@@ -1,17 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import BrandCard from "./BrandCard/BrandCard";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const OurBrands = () => {
-    const [brands,setBrands] = useState([]);
-
-    useEffect(()=>{
-        fetch('/public/data.json')
-        .then(res=>res.json())
-        .then(data=>{
-            setBrands(data)
-        })
-
-    },[])
+  const {brands} = useContext(AuthContext)
     return (
         <div>
             <h2 className="text-center text-4xl font-bold bg-[#2453D4] text-white p-3 rounded-md w-1/2 mx-auto">Our Brand Collection</h2>

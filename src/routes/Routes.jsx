@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import ErrorPage from "../pages/ErrorPage";
 import AddProducts from "../components/AddProducts/AddProducts";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import Products from "../components/Products/Products";
 
 const CreateRoute = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const CreateRoute = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path:'/products/:id',
+        element:<Products/>
+      }
     ],
   },
 ]);
