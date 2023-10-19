@@ -7,6 +7,10 @@ import ErrorPage from "../pages/ErrorPage";
 import AddProducts from "../components/AddProducts/AddProducts";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import Products from "../components/Products/Products";
+import ErrorProductPage from "../components/Products/ErrorProductPage";
+import ProductDetails from "../components/ProductDetails/ProductDetails";
+import MyCarts from "../pages/MyCarts";
+import UpdateProduct from "../components/UpdateProduct";
 
 const CreateRoute = createBrowserRouter([
   {
@@ -35,9 +39,33 @@ const CreateRoute = createBrowserRouter([
         ),
       },
       {
-        path:'/products/:id',
-        element:<Products/>
-      }
+        path: "/products/:id",
+        element: <Products />,
+      },
+      {
+        path: "/productDetails/:id",
+        element: (
+          <PrivateRoute>
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <PrivateRoute>
+            <MyCarts />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path:'/update/:id',
+        element:<UpdateProduct/>
+      },
+      {
+        path: "/error",
+        element: <ErrorProductPage />,
+      },
     ],
   },
 ]);

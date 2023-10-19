@@ -1,58 +1,27 @@
-import { useState } from "react";
-import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const AddProducts = () => {
-  const [selectedOption, setSelectedOption] = useState("");
+const UpdateProduct = () => {
 
-  const handleSelectChange = (event) => {
-    const selectedValue = event.target.value;
-    setSelectedOption(selectedValue);
-  };
+    const [selectedOption, setSelectedOption] = useState("");
 
-  const handleAddProduct = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const name = form.name.value;
-    const brandName = form.brandName.value;
-    const price = form.price.value;
-    const rating = form.rating.value;
-    const description = form.description.value;
-    const photo = form.photo.value;
-    const product = {
-      name,
-      brandName,
-      price,
-      rating,
-      description,
-      selectedOption,
-      photo,
+    const handleSelectChange = (event) => {
+      const selectedValue = event.target.value;
+      setSelectedOption(selectedValue);
     };
-    console.log(product);
-    fetch("http://localhost:5000/data", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
+  const { id } = useParams();
+  useEffect(() => {
+    fetch(`http://localhost:5000/update/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "New Product added successfully",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
         console.log(data);
-      })
-      .catch();
-  };
-  console.log(selectedOption)
+      });
+  }, [id]);
+  const handleUpdateProduct = () =>{
+
+  }
   return (
-    <form onSubmit={handleAddProduct}>
+    <form onSubmit={handleUpdateProduct}>
       <div className="w-1/2 mx-auto bg-[#F3F6FB] p-10 mt-5 border-none my-10">
         <h2 className="text-4xl mb-7 text-black font-bold text-center">
           Add New Product
@@ -141,4 +110,4 @@ const AddProducts = () => {
   );
 };
 
-export default AddProducts;
+export default UpdateProduct;

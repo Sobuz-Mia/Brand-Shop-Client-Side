@@ -19,7 +19,7 @@ const Navbar = () => {
         <NavLink to={"/addProducts"}>Add Product</NavLink>
       </li>
       <li className="mr-2">
-        <NavLink to={"/carts"}> My Cart</NavLink>
+        <NavLink to={"/cart"}> My Cart</NavLink>
       </li>
     </>
   );
