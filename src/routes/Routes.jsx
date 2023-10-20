@@ -59,8 +59,12 @@ const CreateRoute = createBrowserRouter([
         ),
       },
       {
-        path:'/update/:id',
-        element:<UpdateProduct/>
+        path: "/update/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateProduct />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/error",

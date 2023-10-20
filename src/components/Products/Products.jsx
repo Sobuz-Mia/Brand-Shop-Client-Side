@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Product from "./Product";
 import ErrorProductPage from "./ErrorProductPage";
-import Bannar from "../Bannar/Bannar";
+import Slider from "../Slider/Slider";
 
 const Products = () => {
   const [allData, setAllData] = useState([]);
@@ -18,7 +18,7 @@ const Products = () => {
   return (
     <div>
       <div className="p-4">
-      <Bannar/>
+      <Slider/>
       </div>
       <div className="grid grid-cols-2 gap-5 px-5 py-5">
       {allData.length > 0 ? (

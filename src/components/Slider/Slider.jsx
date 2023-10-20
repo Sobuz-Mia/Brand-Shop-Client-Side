@@ -2,7 +2,7 @@ import banner_1 from '../../assets/banner-1.jpg'
 import banner_2 from '../../assets/banner-2.jpg'
 import banner_3 from '../../assets/banner3.jpg'
 import banner_4 from '../../assets/banner-4.jpg'
-const Bannar = () => {
+const Slider = () => {
     return (
         <div className="carousel w-full my-8 rounded-lg">
         <div id="slide1" className="carousel-item relative w-full">
@@ -37,4 +37,4 @@ const Bannar = () => {
     );
 };
 
-export default Bannar;
+export default Slider;
