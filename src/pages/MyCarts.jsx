@@ -9,7 +9,7 @@ const MyCarts = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(` https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts/${user?.email}`)
+    fetch(`https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -28,7 +28,7 @@ const MyCarts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(` https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts/${id}`, {
+        fetch(`https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -54,7 +54,7 @@ const MyCarts = () => {
         { data.length>0 ?
         data.map((data) => (
           <div
-            className="w-full mx-auto my-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          className="w-full bg-white border border-gray-200 rounded-lg shadow"
             key={data._id}
           >
             <a href="#">
@@ -65,13 +65,13 @@ const MyCarts = () => {
               />
             </a>
             <div className="px-10 pb-5">
-              <p className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              <p className="text-xl font-semibold tracking-tight text-gray-900">
                 Name: {data.name}
               </p>
-              <p className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              <p className="text-xl font-semibold tracking-tight text-gray-900">
                 Brand: {data.brandName}
               </p>
-              <p className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              <p className="text-xl font-semibold tracking-tight text-gray-900">
                 Type: {data.selectedOption}
               </p>
 
@@ -115,7 +115,7 @@ const MyCarts = () => {
               <div className="flex items-center justify-between">
                 <button
                   onClick={() => handleDelete(data?._id)}
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className=" btn btn-outline bg-warning text-white normal-case focus:ring-4 focus:outline-non font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
                   Delete
                 </button>

@@ -9,7 +9,7 @@ const Products = () => {
 
   const { id } = useParams();
   useEffect(() => {
-    fetch(` https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/data/${id}`)
+    fetch(`https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/data/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setAllData(data);

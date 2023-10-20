@@ -11,7 +11,7 @@ const UpdateProduct = () => {
   };
   const { id } = useParams();
   useEffect(() => {
-    fetch(` https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/update/${id}`)
+    fetch(`https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/update/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -36,7 +36,7 @@ const UpdateProduct = () => {
       selectedOption,
       photo,
     };
-    fetch(` https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/updateCart/${data?._id}`, {
+    fetch(`https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/updateCart/${data?._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

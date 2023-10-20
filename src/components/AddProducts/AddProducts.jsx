@@ -28,7 +28,7 @@ const AddProducts = () => {
       photo,
     };
     console.log(product);
-    fetch(" https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/data", {
+    fetch("https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/data", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -9,7 +9,7 @@ const ProductDetails = () => {
   const [data, setData] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    fetch(` https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/details/${id}`)
+    fetch(`https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/details/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -38,7 +38,7 @@ const ProductDetails = () => {
       cart_id: _id,
       email: user.email,
     };
-    fetch(" https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts", {
+    fetch("https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

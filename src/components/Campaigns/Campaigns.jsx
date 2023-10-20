@@ -1,7 +1,7 @@
 const Campaigns = () => {
   return (
     <div className="bg-[#F5F5F5] p-4 rounded-md">
-      <h2 className="text-4xl text-center my-4">Upcoming Campaigns</h2>
+      <h2 className="text-4xl text-center my-4 font-bold">This Week’s Highlights</h2>
       <div className="grid md:grid-cols-2 gap-5">
         <div className="bg-white p-4 rounded-lg">
           <h2 className="text-3xl text-center my-4 font-semibold">Happy Hour</h2>
