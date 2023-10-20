@@ -45,6 +45,7 @@ const AddProducts = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          form.reset();
         }
         console.log(data);
       })

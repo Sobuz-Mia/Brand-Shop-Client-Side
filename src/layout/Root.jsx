@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Root = () => {
-    const {handleDarkMode,isDarkMode} = useContext(AuthContext);
+    const {isDarkMode} = useContext(AuthContext);
     console.log(isDarkMode);
     return (
         <div className={isDarkMode? 'dark-mode' : 'light-mode'}>

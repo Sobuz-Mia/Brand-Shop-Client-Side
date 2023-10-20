@@ -13,7 +13,7 @@ body{font-family:Poppins,sans-serif}
 /* styles.css */
 .container{
     border: 2px;
-    width: 100px;
+    width: 80px;
 }
 .switch{
     position: relative;

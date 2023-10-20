@@ -1,8 +1,8 @@
 # Smart Shop  
 
-## [ Website Live Link](https://assignmet-9.web.app/)
+## [ Website Live Link](https://brandshop-client-side.web.app/)
 
-Click here for visit the site: [https://assignmet-9.web.app](https://assignmet-9.web.app)
+Click here for visit the site: [https://brandshop-client-side.web.app/](https://brandshop-client-side.web.app/)
 
 # Five feature for my site
 
