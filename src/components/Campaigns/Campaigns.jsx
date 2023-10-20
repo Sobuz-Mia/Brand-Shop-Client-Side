@@ -5,7 +5,7 @@ const Campaigns = () => {
       <div className="grid md:grid-cols-2 gap-5">
         <div className="bg-white p-4 rounded-lg">
           <h2 className="text-3xl text-center my-4 font-semibold">Happy Hour</h2>
-          <div className=" flex items-center gap-5">
+          <div className=" flex md:flex-row flex-col items-center gap-5">
             <h2 className="text-[#FF5417] text-lg my-3">Campaign starts in</h2>
             <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
               <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
