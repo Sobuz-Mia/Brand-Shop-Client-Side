@@ -1,6 +1,5 @@
 import category_1 from "../../assets/category-1.jpg";
 import category_2 from "../../assets/category-2.jpg";
-import category_3 from "../../assets/category-3.png";
 import { AiOutlineArrowRight } from 'react-icons/ai';
 const TopCategories = () => {
   return (

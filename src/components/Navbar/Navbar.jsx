@@ -3,9 +3,10 @@ import logo from "../../assets/logo.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import userLogo from "../../assets/userLogo.png";
+import ReactSwitch from "react-switch";
 
 const Navbar = () => {
-  const { user, loggedOut } = useContext(AuthContext);
+  const { user, loggedOut ,handleDarkMode,isDarkMode} = useContext(AuthContext);
   
   const handleSignout = () => {
     loggedOut().then();
@@ -82,6 +83,14 @@ const Navbar = () => {
             <button className="btn btn-ghost normal-case text-xl">Login</button>
           </NavLink>
         )}
+        {/* <div className="switch">
+          <ReactSwitch/>
+        </div> */}
+        <button onClick={handleDarkMode}>
+        {
+          isDarkMode? "light mode" : "Dark mode"
+        }
+        </button>
       </div>
     </div>
   );
