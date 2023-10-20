@@ -42,9 +42,9 @@ const Login = () => {
 
     const handleLoginWithGoogle = () =>{
         googleLogIn()
-        .then(result=>{
+        .then(
             navigate('/')
-        })
+        )
     }
 
   return (

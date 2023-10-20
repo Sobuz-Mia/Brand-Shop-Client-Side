@@ -3,10 +3,9 @@ import logo from "../../assets/logo.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import userLogo from "../../assets/userLogo.png";
-import ReactSwitch from "react-switch";
 
 const Navbar = () => {
-  const { user, loggedOut, handleDarkMode, isDarkMode } =
+  const { user, loggedOut, handleDarkMode } =
     useContext(AuthContext);
 
   const handleSignout = () => {
@@ -92,14 +91,7 @@ const Navbar = () => {
             <span className="slider"></span>
           </label>
         </div>
-        {/* <button >
-          <input type="checkbox" className="text-xl"
-          onClick={handleDarkMode}
-          />
-        {
-          isDarkMode? "light mode" : "Dark mode"
-        }
-        </button> */}
+      
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from './../firebase/Firebase.config';
+import PropTypes from 'prop-types';
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -80,5 +81,7 @@ const AuthProvider = ({children}) => {
         </AuthContext.Provider>
     );
 };
-
+AuthProvider.propTypes = {
+    children:PropTypes.node
+}
 export default AuthProvider;
