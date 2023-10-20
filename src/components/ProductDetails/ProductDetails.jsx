@@ -6,7 +6,6 @@ import { AuthContext } from "../../provider/AuthProvider";
 const ProductDetails = () => {
   const { user } = useContext(AuthContext);
 
-  const [userId, setUserId] = useState();
   const [data, setData] = useState([]);
   const { id } = useParams();
   useEffect(() => {
@@ -17,17 +16,6 @@ const ProductDetails = () => {
       });
   }, [id]);
 
-  useEffect(() => {
-    fetch(` https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        const itemId = data?.map((item) => item.cart_id);
-        console.log(itemId);
-        setUserId(itemId);
-      });
-  }, [user?.email]);
-
-  console.log(userId);
   const handleAddCart = (data) => {
     const {
       brandName,
@@ -132,7 +120,6 @@ const ProductDetails = () => {
         <p className="text-2xl text-white p-3">{data.description}</p>
         <div className="flex items-center justify-between">
           <button
-            // disabled={ userId?.includes(data?._id)}
             onClick={() => handleAddCart(data)}
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
