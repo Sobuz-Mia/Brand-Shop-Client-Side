@@ -10,7 +10,7 @@ const ProductDetails = () => {
   const [data, setData] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/details/${id}`)
+    fetch(` https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/details/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -18,7 +18,7 @@ const ProductDetails = () => {
   }, [id]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/carts/${user?.email}`)
+    fetch(` https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         const itemId = data?.map((item) => item.cart_id);
@@ -50,7 +50,7 @@ const ProductDetails = () => {
       cart_id: _id,
       email: user.email,
     };
-    fetch("http://localhost:5000/carts", {
+    fetch(" https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -72,7 +72,7 @@ const ProductDetails = () => {
       });
   };
   return (
-    <div className="w-1/2 mx-auto my-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="md:w-1/2 m-5  mx-auto my-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
         <img
           className="p-8 rounded-t-lg w-full h-80"

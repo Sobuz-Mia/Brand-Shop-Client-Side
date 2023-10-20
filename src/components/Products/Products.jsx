@@ -9,7 +9,7 @@ const Products = () => {
 
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/data/${id}`)
+    fetch(` https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/data/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setAllData(data);
@@ -20,13 +20,12 @@ const Products = () => {
       <div className="p-4">
       <Slider/>
       </div>
-      <div className="grid grid-cols-2 gap-5 px-5 py-5">
+      <div className="grid md:grid-cols-2 gap-5 px-5 py-5">
       {allData.length > 0 ? (
         allData?.map((data, inx) => <Product data={data} key={inx}></Product>)
       ) : (
         <ErrorProductPage />
       )}
-      {}
     </div>
     </div>
   );

@@ -6,7 +6,7 @@ const TopCategories = () => {
   return (
     <div>
       <h2 className="text-3xl font-semibold">Top Categories</h2>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-3 gap-6">
         <div className="flex gap-5 my-5">
           <div className="border-2 h-24 rounded-lg">
             <img className="w-24 h-20 p-5" src={category_1} alt="" />

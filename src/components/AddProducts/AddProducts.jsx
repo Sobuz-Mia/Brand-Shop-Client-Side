@@ -28,7 +28,7 @@ const AddProducts = () => {
       photo,
     };
     console.log(product);
-    fetch("http://localhost:5000/data", {
+    fetch(" https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/data", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -53,7 +53,7 @@ const AddProducts = () => {
   console.log(selectedOption)
   return (
     <form onSubmit={handleAddProduct}>
-      <div className="w-1/2 mx-auto bg-[#F3F6FB] p-10 mt-5 border-none my-10">
+      <div className="md:w-1/2 mx-auto bg-[#F3F6FB] p-10 mt-5 border-none my-10">
         <h2 className="text-4xl mb-7 text-black font-bold text-center">
           Add New Product
         </h2>

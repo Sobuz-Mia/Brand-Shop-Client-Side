@@ -1,4 +1,4 @@
-import email from '../../src/assets/email.jpg'
+import email from "../../src/assets/email.jpg";
 
 const Footer = () => {
   return (
@@ -6,10 +6,13 @@ const Footer = () => {
       {/* bg-[#2453D4] */}
       <div>
         <form className=" w-full bg-[#2453D4] border-b pl-0">
-          <div className='flex items-center gap-3 justify-center p-5'>
-            <img className='w-16 h-16 rounded-full' src={email} alt="" />
+          <div className="flex items-center gap-3 justify-center p-5">
+            <img className="w-16 h-16 rounded-full" src={email} alt="" />
             <div>
-              <h2 className="text-white text-3xl font-semibold "> Sign Up For Newsletter</h2>
+              <h2 className="text-white text-3xl font-semibold ">
+                {" "}
+                Sign Up For Newsletter
+              </h2>
               <p className=" text-slate-300">
                 Get E-mail update about our latest product and special offer
               </p>

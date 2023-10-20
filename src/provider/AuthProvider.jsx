@@ -36,7 +36,7 @@ const AuthProvider = ({children}) => {
     //load all data from database
 
     useEffect(()=>{
-        fetch('/public/data.json')
+        fetch('/data.json')
         .then(res=>res.json())
         .then(data=>{
             setBrands(data)

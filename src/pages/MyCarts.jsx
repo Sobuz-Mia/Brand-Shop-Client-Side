@@ -9,7 +9,7 @@ const MyCarts = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/carts/${user?.email}`)
+    fetch(` https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -28,7 +28,7 @@ const MyCarts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/carts/${id}`, {
+        fetch(` https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -50,8 +50,9 @@ const MyCarts = () => {
       <h2 className="text-2xl text-center my-7 font-bold text-red-500">
         Welcome to your Cart
       </h2>
-      <div className="grid grid-cols-2 gap-4 px-4">
-        {data.map((data) => (
+      <div className="grid md:grid-cols-2 gap-4 px-4">
+        { data.length>0 ?
+        data.map((data) => (
           <div
             className="w-full mx-auto my-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
             key={data._id}
@@ -121,7 +122,9 @@ const MyCarts = () => {
               </div>
             </div>
           </div>
-        ))}
+        )):
+        <h2 className="text-3xl text-center text-red-400 flex justify-center my-10">Do not have any add Items. <br /> Please add first </h2>
+      }
       </div>
     </div>
   );
