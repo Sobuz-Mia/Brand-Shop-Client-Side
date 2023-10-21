@@ -6,7 +6,7 @@ const Product = ({ data }) => {
 
   return (
     <div>
-      <div className="w-full  bg-white border border-gray-200 rounded-lg shadow">
+      <div className="w-full bg-white border border-gray-200 rounded-lg shadow">
         <a href="#">
           <img
             className="p-8 rounded-t-lg w-full h-80"

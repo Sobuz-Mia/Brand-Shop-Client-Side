@@ -28,13 +28,16 @@ const AddProducts = () => {
       photo,
     };
     console.log(product);
-    fetch("https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/data", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
+    fetch(
+      "https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/data",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(product),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
@@ -51,7 +54,7 @@ const AddProducts = () => {
       })
       .catch();
   };
-  console.log(selectedOption)
+  console.log(selectedOption);
   return (
     <form onSubmit={handleAddProduct}>
       <div className="md:w-1/2 mx-auto bg-[#F3F6FB] p-10 mt-5 border-none my-10">

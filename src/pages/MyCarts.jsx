@@ -54,7 +54,7 @@ const MyCarts = () => {
         { data.length>0 ?
         data.map((data) => (
           <div
-          className="w-full bg-white border border-gray-200 rounded-lg shadow"
+          className="w-full bg-white border my-5 border-gray-200 rounded-lg shadow"
             key={data._id}
           >
             <a href="#">
