@@ -1,6 +1,6 @@
 
 import { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -9,6 +9,7 @@ const Login = () => {
     
     const {loggedIn,googleLogIn} = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleUser = e =>{
         e.preventDefault();
@@ -37,7 +38,6 @@ const Login = () => {
                   })
             }
         })
-        console.log(email,password);
     }
 
     const handleLoginWithGoogle = () =>{
