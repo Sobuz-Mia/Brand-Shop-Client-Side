@@ -29,7 +29,7 @@ const AddProducts = () => {
     };
     console.log(product);
     fetch(
-      "https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/data",
+      "http://localhost:5000/data",
       {
         method: "POST",
         headers: {

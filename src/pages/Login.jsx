@@ -1,51 +1,56 @@
-
 import { useContext } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
-
+import axios from "axios";
 
 const Login = () => {
-    
-    const {loggedIn,googleLogIn} = useContext(AuthContext);
-    const navigate = useNavigate();
-    const location = useLocation();
+  const { loggedIn, googleLogIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    const handleUser = e =>{
-        e.preventDefault();
-        const form = e.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        loggedIn(email,password)
-        .then(result=>{
-            if(result.user){
-                Swal.fire({
-                    position: 'Center',
-                    icon: 'success',
-                    title: 'Successfully login your account',
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-                  navigate(location?.state ? location.state : '/')
-            }
-        })
-        .catch(err=>{
-            if(err){
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...Sorry',
-                    text: 'Invalid email / password!',
-                  })
-            }
-        })
-    }
+  const handleUser = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    loggedIn(email, password)
+      .then((result) => {
+        if (result.user) {
+          Swal.fire({
+            position: "Center",
+            icon: "success",
+            title: "Successfully login your account",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          axios
+            .post(
+              "http://localhost:5000/jwt",
+              { email },
+              { withCredentials: true }
+            )
+            .then((res) => {
+              if (res.data?.status == "success") {
+                navigate(location?.state ? location.state : "/");
+              }
+            });
+        }
+      })
+      .catch((err) => {
+        if (err) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...Sorry",
+            text: "Invalid email / password!",
+          });
+        }
+      });
+  };
 
-    const handleLoginWithGoogle = () =>{
-        googleLogIn()
-        .then(
-            navigate('/')
-        )
-    }
+  const handleLoginWithGoogle = () => {
+    googleLogIn().then(navigate("/"));
+  };
 
   return (
     <div className="mx-auto mb-10 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
@@ -94,7 +99,7 @@ const Login = () => {
           Login to your account
         </button>
         <button
-        onClick={handleLoginWithGoogle}
+          onClick={handleLoginWithGoogle}
           type="submit"
           className="w-full text-white btn-ghost normal-case btn-outline btn focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
         >

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 
 import Swal from "sweetalert2";
 import { AuthContext } from "../provider/AuthProvider";
+import axios from "axios";
 
 const MyCarts = () => {
   const { user } = useContext(AuthContext);
@@ -9,11 +10,16 @@ const MyCarts = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      });
+    axios.get(`http://localhost:5000/carts/${user?.email}`,{withCredentials:true})
+    .then(res=>{
+      setData(res.data)
+    })
+    
+    // fetch(`http://localhost:5000/carts/${user?.email}`)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setData(data);
+    //   });
   }, [user?.email]);
 
   const handleDelete = (id) => {
@@ -28,7 +34,7 @@ const MyCarts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://brandshop-server-side-jygvx8slj-sobuzs-projects.vercel.app/carts/${id}`, {
+        fetch(`http://localhost:5000/carts/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
